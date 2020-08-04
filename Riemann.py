@@ -1,0 +1,29 @@
+import random
+
+print("You are measuring the quantum spin of an electron. You will be asked to enter two numbers, a and b."
+      " Pick two numbers such that a^2 + b^2 is roughly equal to 1.")
+
+while True:
+    x = input("\nEnter a number a: ")
+    y = input("\nEnter a number b: ")
+    if 0.97 <= float(x)*float(x)+float(y)*float(y) <= 1.03:
+        break
+    else:
+        print("\nSorry, try again and enter two numbers a and b.")
+
+print("\nThis is the state-vector notation of your quantum state:")
+
+print("\n|v> = " + x + "|u> + " + y + "|d>")
+g = input("\n Do you want the probability of the electron being spin up? ")
+if g == "yes" or g == "Yes":
+    print(float(x)*float(x))
+h = input("\n Do you want the probability of the electron being spin down? ")
+if h == "yes" or h == "Yes":
+    print(float(y)*float(y))
+i = input("\n Would you like to know the actual value of the spin?")
+if i == "yes" or i == "Yes":
+    value = random.random()
+    if float(value) <= float(x)*float(x):
+        print("The spin was measured to be up")
+    else:
+        print("The spin was measured to be down")
