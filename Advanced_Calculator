@@ -1,0 +1,205 @@
+import sympy as sp
+
+print("Options:")
+print("Enter 'add' to add two numbers")
+print("Enter 'subtract' to subtract two numbers")
+print("Enter 'multiply' to multiply two numbers")
+print("Enter 'divide' to divide two numbers")
+print("Enter 'exponentiation' to raise one number to the power of the other")
+print("Enter 'sin' to take the sin of a number")
+print("Enter 'cos' to take the cosine of a number")
+print("Enter 'tan' to take the tangent of a number")
+print("Enter 'arcsin' to take the inverse sin of a number")
+print("Enter 'arccos' to take the inverse cos of a number")
+print("Enter 'arctan' to take the inverse tangent of a number")
+print("Enter 'sinh' to take the hyperbolic sin of a number")
+print("Enter 'cosh' to take the hyperbolic cos of a number")
+print("Enter 'tanh' to take the hyperbolic tan of a number")
+print("Enter 'limit' to take the limit of a function")
+print("Enter 'derivative' to differentiate a function")
+print("Enter 'partial derivative' to take the partial derivative of a function")
+print("Enter 'integral' to integrate a function")
+print("Enter 'factorial' to take the factorial of a number")
+print("Enter 'summation' to take the sum of a bunch of numbers")
+print("Enter 'expand' to expand an expression")
+print("Enter 'simplify' to expand an expression")
+print("Enter 'Fibonacci Sequence' to find the Fibonacci Sequence for a given number of terms")
+print("Enter 'solve 2 variable system of equations' to solve a system of equations with 2 variables")
+print("Enter 'solve 3 variable system of equations' to solve a system of equations with 3 variables")
+print("Enter 'quit' to end program")
+
+while True:
+
+    user_input = input(": ")
+
+    if user_input == "quit":
+        break
+    elif user_input == "add":
+        num1 = float(input("Enter a number: "))
+        num2 = float(input("Enter another number: "))
+        res=str(num1 + num2)
+        print("The answer is " + res)
+    elif user_input == "subtract":
+        num1 = float(input("Enter a number: "))
+        num2 = float(input("Enter another number: "))
+        res = str(num1 - num2)
+        print("The answer is " + res)
+    elif user_input == "multiply":
+        num1 = float(input("Enter a number: "))
+        num2 = float(input("Enter another number: "))
+        res = str(num1 * num2)
+        print("The answer is " + res)
+    elif user_input == "divide":
+        num1 = float(input("Enter a number: "))
+        num2 = float(input("Enter another number: "))
+        res = str(num1 / num2)
+        print("The answer is " + res)
+    elif user_input == "exponentiation":
+        num1 = float(input("Enter a number: "))
+        num2 = float(input("Enter another number: "))
+        res = str(num1 ** num2)
+        print("The answer is " + res)
+    elif user_input == "sin":
+        from math import sin
+        x = float(input("Enter a number: "))
+        res = str(sin(x))
+        print("The answer is " + res)
+    elif user_input == "cos":
+        from math import cos
+        x = float(input("Enter a number: "))
+        res = str(cos(x))
+        print("The answer is " + res)
+    elif user_input == "tan":
+        from math import tan
+        x = float(input("Enter a number: "))
+        res = str(tan(x))
+        print("The answer is " + res)
+    elif user_input == "factorial":
+        from math import factorial
+        x = float(input("Enter a number: "))
+        res = str(factorial(x))
+        print("The answer is " + res)
+    elif user_input == "arcsin":
+        from math import asin
+        x = float(input("Enter a number: "))
+        res = str(asin(x))
+        print("The answer is " + res)
+    elif user_input == "arccos":
+        from math import acos
+        x = float(input("Enter a number: "))
+        res = str(acos(x))
+        print("The answer is " + res)
+    elif user_input == "arctan":
+        from math import atan
+        x = float(input("Enter a number: "))
+        res = str(atan(x))
+        print("The answer is " + res)
+    elif user_input == "sinh":
+        from math import sinh
+        x = float(input("Enter a number: "))
+        res = str(sinh(x))
+        print("The answer is " + res)
+    elif user_input == "cosh":
+        from math import cosh
+        x = float(input("Enter a number: "))
+        res = str(cosh(x))
+        print("The answer is " + res)
+    elif user_input == "tanh":
+        from math import tanh
+        x = float(input("Enter a number: "))
+        res = str(tanh(x))
+        print("The answer is " + res)
+        f = input("Enter a function in terms of x: ")
+        print(sp.simplify(f))
+    elif user_input == "expand":
+        f = input("Enter a function in terms of x: ")
+        print(sp.expand(f))
+    elif user_input == "summation":
+        x = float(input("Enter a number: "))
+        def f(a):
+            if a == 1:
+                return a
+            else:
+                return a +f(a-1)
+        print(f(x))
+    elif user_input == "derivative":
+        x = sp.Symbol('x')
+        f = input("Enter a function in terms of x: ")
+        print(sp.diff(f,x))
+    elif user_input == "partial derivative":
+        x = sp.Symbol('x')
+        y = sp.Symbol('y')
+        z = sp.Symbol('z')
+        f = input("Enter a function in terms of x, y, z: ")
+        i = input("What variable do you want to differentiate with respect to? ")
+        if i == 'x':
+            print(sp.diff(f,x))
+        elif i == 'y':
+            print(sp.diff(f,y))
+        elif i == 'z':
+            print(sp.diff(f,z))
+    elif user_input == "integral":
+        x = sp.Symbol('x')
+        f = input("Enter a function in terms of x: ")
+        i = input("Do you want to compute a definite or indefinite integral? ")
+        if i == "indefinite":
+            print(str(sp.integrate(f,x)) + str(" + C"))
+        if i == "definite":
+            j = input("Enter an upper bound: ")
+            k = input("Enter a lower bound: ")
+            print(sp.integrate(f,(x,k,j)))
+    elif user_input == 'limit':
+        from sympy import *
+        x = symbols('x')
+        f = input("Enter a function in terms of x: ")
+        h = input("What value is the function approaching? ")
+        print(limit(f, x, h))
+    elif user_input == "Fibonacci Sequence":
+        x = input("Enter the number of fibonacci terms you want: ")
+        def f(n):
+            a = 0
+            b = 1
+            if n == 1:
+                print(a)
+            else:
+                print(a)
+                print(b)
+                for i in range(2, n):
+                    c = a + b
+                    a = b
+                    b = c
+                    print(c)
+        print(f(int(x)))
+    elif user_input == "solve 2 variable system of equations":
+        import numpy as np
+        print("Enter the numbers a,b,c,d,q,r where ax+by = q and cx + dy = r: ")
+        a = input("Enter a: ")
+        b = input("Enter b: ")
+        c = input("Enter c: ")
+        d = input("Enter d: ")
+        q = input("Enter q: ")
+        r = input("Enter r: ")
+        A = np.array([[float(a), float(b)],[float(c), float(d)]])
+        b = np.array([float(q),float(r)])
+        print(np.linalg.solve(A,b))
+    elif user_input == "solve 3 variable system of equations":
+        import numpy as np
+        print("Enter the numbers a,b,c,d,e,f,g.h,i,q,r,t where ax+by+cz = q , dx+ey+fz= r , gx+hy+iz = t: ")
+        a = input("Enter a: ")
+        b = input("Enter b: ")
+        c = input("Enter c: ")
+        d = input("Enter d: ")
+        e = input("Enter e: ")
+        f = input("Enter f: ")
+        g = input("Enter g: ")
+        h = input("Enter h: ")
+        i = input("Enter i: ")
+        q = input("Enter q: ")
+        r = input("Enter r: ")
+        t = input("Enter t: ")
+        A = np.array([[float(a), float(b), float(c)],[float(d), float(e), float(f)], [float(g), float(h), float(i)]])
+        b = np.array([float(q),float(r), float(t)])
+        print(np.linalg.solve(A,b))
+
+    else:
+        print("Unknown input")
