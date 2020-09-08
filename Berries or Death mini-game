@@ -1,0 +1,13 @@
+import random as random
+
+#Mini risk vs reward game involving berries
+
+while True:
+    x = input("Enter a number from 1 to 100: ")
+    y = random.random()
+    if float(y) < float(x)/100:
+        print("\nOh no! You have to restart the game!\n")
+    else:
+        print("\nYou have successfully captured "+ str(x)+" berries\n")
+
+
