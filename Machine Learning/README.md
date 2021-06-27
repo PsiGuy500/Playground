@@ -1,1 +1,1 @@
-This folder has machine learning 
+This folder has several machine learning codes.
