@@ -1,3 +1,5 @@
+### This code was taken from the Python Machine Learning Course off of Coursera ###
+
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
