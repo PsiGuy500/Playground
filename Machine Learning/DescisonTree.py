@@ -1,4 +1,4 @@
-### This code was taken from the Python Machine Learning Course off of Coursera ###
+### This code was taken from the Python Machine Learning Course off of Coursera for personal reference ###
 
 import numpy as np
 import pandas as pd
