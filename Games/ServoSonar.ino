@@ -49,7 +49,7 @@ void loop() {
     delay(2000);
   }
   myservo.write(180);
-  delay(5000);
+  delay(2000);
     
   Serial.print("Distance: ") ;      // Prints the distance on the Serial Monitor
   Serial.println(distance);
